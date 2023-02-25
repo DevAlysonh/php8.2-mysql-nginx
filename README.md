@@ -1,14 +1,24 @@
 # php8.2-mysql-nginx
-Ambiente de desenvolvimento com PHP8.2 + MYSQL + NGINX | Usando Docker (Voltado para estudo, e prática)
+Ambiente de desenvolvimento com PHP8.2 + MYSQL + NGINX + COMPOSER | Usando Docker (Voltado para estudo, e prática)
 
-#### 1- Primeiro Mude a branch para "Master", antes de clonar o repositório;
+*É necessário ter o docker instalado na máquina, e ter alguma noção de como utilizar esta ferramenta. Se você não a possui, pode conferir sobre o docker neste link: https://www.docker.com/get-started/*
 
-#### 2- Use o comando a seguir para remover o versionamento, para que você possa criar seu próprio repositório a partir desse ambiente;
+#### 1- Primeiro clone o repositório usando o comando:
+```
+git clone git@github.com:DevAlysonh/php8.2-mysql-nginx.git <seu-projeto>
+```
+
+#### 2 - Mude para a branch php8.2-mysql-nginx-composer:
+```
+git checkout php8.2-mysql-nginx-composer
+```
+
+#### 3- Use o comando a seguir para remover o versionamento, para que você possa criar seu próprio repositório a partir desse ambiente;
 ```
 rm -rf .git
 ```
 
-#### 3- Copie o arquivo .env.example -> .env | e adicione o nome da base de dados que deseja usar, e a senha para o usuário root:
+#### 4- Copie o arquivo .env.example -> .env | e adicione o nome da base de dados que deseja usar, e a senha para o usuário root:
 ```
 cp .env.example .env
 ```
@@ -17,7 +27,7 @@ MYSQL_ROOT_PASSWORD= minhaSenha
 MYSQL_DATABASE= meuDb
 ```
 
-#### 4- Configure a porta que deseja usar para o serviço do NGINX:
+#### 5- Configure a porta que deseja usar para o serviço do NGINX:
 ```
   nginx:
     ports:
@@ -25,7 +35,7 @@ MYSQL_DATABASE= meuDb
 ```
 *Talvez você tenha algum outro servidor rodando na sua máquina, e isso pode gerar alguns conflitos com as portas. Por isso eu gosto de usar a porta 8989 da minha máquina para executar o servidor nginx, você pode escolher uma de sua preferência ou usar a padrão que é: 80:80*
 
-#### 4- Configure a porta que deseja usar para o serviço do MYSQL:
+#### 6- Configure a porta que deseja usar para o serviço do MYSQL:
 ```
   mysql:
     ports:
