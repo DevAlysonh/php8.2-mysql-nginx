@@ -71,5 +71,6 @@ docker exec -it meu-app composer -v
 
 //ou pode acessar o bash do container para executar seus comandos php:
 
-docker exec -it meu-app bash
+: docker exec -it meu-app bash
+: composer -v
 ```
